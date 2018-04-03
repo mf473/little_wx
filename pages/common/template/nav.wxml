@@ -1,0 +1,12 @@
+<template name="nav">
+  <view class="btn-area">
+    <view wx:for="{{nav}}" wx:key="{{index}}" data-index="{{index}}">
+      <block wx:if="{{index == n}}">
+        <navigator url="{{item.link}}" hover-class="navigator-hover" class="navi active">{{item.content}}</navigator>
+      </block>
+      <block wx:else>
+        <navigator url="{{item.link}}" hover-class="navigator-hover" class="navi">{{item.content}}</navigator>
+      </block>
+    </view>
+  </view>
+</template>

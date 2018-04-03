@@ -1,0 +1,2 @@
+/* pages/mf/mf.wxss */
+@import "/pages/common/style/list.wxss"

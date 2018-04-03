@@ -1,0 +1,3 @@
+<!--pages/history/history.wxml-->
+<import src="/pages/common/template/list" />
+<template is="list" />

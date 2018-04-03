@@ -1,0 +1,17 @@
+<template name="list">
+  <scroll-view scroll-y="true" style="height:96%" lower-threshold="300" bindscrolltolower="lower">
+      <view class="content" hover-class="hover-green" wx:for="{{msg}}" wx:key="{{index}}" data-index="{{index}}" bindtap='switchContent'>
+        <view class="lTitle">{{item.title}}</view>
+        <view class="lTime"><text>{{item.ct}}</text></view>
+      </view>
+      <view class='user' bindtap='mine'><image src="{{userImage}}"></image></view>
+      <view class='load' wx:if="{{load}}">
+        <view class='loading'>
+          <view></view>
+          <view></view>
+          <view></view> 
+        </view>
+      </view>
+      <view wx:if="{{moreLoad}}" style="text-align:center;line-height:80rpx;">没有更多了~</view>
+  </scroll-view>
+</template>

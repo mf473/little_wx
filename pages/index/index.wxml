@@ -1,0 +1,10 @@
+<!--pages/mf/mf.wxml-->
+
+<!-- <view class='view' wx:for="{{msg}}" wx:key="{{index}}">
+  <text wx:key="{{item._id}}">{{item.rawTitle}}</text>
+  <text class="year">{{item.year}}</text>
+    <image src="{{'http://douban.newfq.com/' + item.posterKey}}" class='pic' background-size="cover"></image>
+
+</view> -->
+<import src="../common/template/list.wxml"/>
+<template is="list" data="{{msg, load, userImage, nickName, moreLoad}}" />  

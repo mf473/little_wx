@@ -1,0 +1,4 @@
+<!--pages/share/share.wxml-->
+<view style='text-align:center'>
+  <image src='../common/image/xcx.jpg' mode='widthFix'></image>
+</view>

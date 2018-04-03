@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/pic/pic",
+    "pages/gif/gif",
+    "pages/content/content",
+    "pages/user/user",
+    "pages/share/share",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1AAD16",
+    "navigationBarTitleText": "笑话大全",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "搞笑段子"
+      },
+      {
+        "pagePath": "pages/pic/pic",
+        "text": "搞笑图片"
+      },
+      {
+        "pagePath": "pages/gif/gif",
+        "text": "搞笑gif"
+      }
+    ],
+    "position": "top"
+  }
+}

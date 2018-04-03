@@ -1,0 +1,13 @@
+<!--pages/user/user.wxml-->
+<view>
+  <view class='userImage tc'><image src="{{userImage}}"></image></view>
+  <view class='nickname tc'><text>{{nickName}}</text></view>
+  <view class='lis share' hover-class="hover-green" bindtap='toShare'>
+    <text>分享小程序</text>
+    <text>›</text>
+  </view>
+  <view class='lis history' hover-class="hover-green" bindtap='toHistory'>
+    <text>观看历史</text>
+    <text>›</text>
+  </view>
+</view>

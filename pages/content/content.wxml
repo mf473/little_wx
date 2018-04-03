@@ -1,0 +1,15 @@
+<!--pages/content/content.wxml-->
+<block wx:if="{{n == 0}}">
+  <view class='wrap'>
+    <view class='title'>{{title}}</view> 
+    <view class='time'>{{time}}</view> 
+    <view class='text' wx:for="{{text}}" wx:key="{{index}}">{{item}}</view> 
+  </view>
+</block>
+<block wx:else>
+  <view class='wrap'>
+    <view class='title'>{{title}}</view> 
+    <view class='time'>{{time}}</view>
+    <image src='{{img}}' lazy-load="true" class='img'></image> 
+  </view>
+</block>

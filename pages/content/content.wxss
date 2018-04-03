@@ -1,0 +1,20 @@
+/* pages/content/content.wxss */
+
+@import '/pages/common/style/list.wxss'
+.wrap {
+  padding: 30rpx;
+}
+
+.title {
+  font-size: 44rpx;
+  padding-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.text {
+  padding-top: 14rpx;
+}
+
+.img {
+  margin-top: 30rpx;
+}
