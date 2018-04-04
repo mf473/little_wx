@@ -17,7 +17,8 @@ Page({
     n: 0,
     text: '',
     userImage: '',
-    nickName: '未知'
+    nickName: '未知',
+    hisOff: true
   },
   lower() {
     // const data = { maxResult: this.data.maxResult, currentPage: this.data.currentPage }, that = this;
@@ -103,8 +104,26 @@ Page({
     console.log(item)
   },
   switchContent(e) {
+    let times = e.currentTarget.dataset.times;
+    let history = wx.getStorageSync('history') || [];
+    let url = '../content/content?text=' + this.data.msg[e.currentTarget.dataset.index].text + '&n=' + this.data.n + '&title=' + this.data.msg[e.currentTarget.dataset.index].title + '&time=' + this.data.msg[e.currentTarget.dataset.index].ct;
+    console.log(history);
+    history = history.filter((item)=>{
+      return item.ct !== times;
+    })
+    history.unshift({
+      text: this.data.msg[e.currentTarget.dataset.index].text,
+      n: this.data.n,
+      ct: times,
+      title: this.data.msg[e.currentTarget.dataset.index].title,
+      img: '',
+      index: e.currentTarget.dataset.index,
+      url: url
+    });
+
+    wx.setStorageSync('history', history);
     wx.navigateTo({
-      url: '../content/content?text=' + this.data.msg[e.currentTarget.dataset.index].text + '&n=' + this.data.n + '&title=' + this.data.msg[e.currentTarget.dataset.index].title + '&time=' + this.data.msg[e.currentTarget.dataset.index].ct
+      url: url
     });
   },
   mine(){

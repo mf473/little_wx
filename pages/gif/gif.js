@@ -17,7 +17,8 @@ Page({
     moreLoad: false,
     text: '',
     userImage: '',
-    nickName: '未知'
+    nickName: '未知',
+    hisOff: true
   },
   lower() {
     if (this.data.currentPage < this.data.allPage) {
@@ -103,8 +104,26 @@ Page({
     console.log(item)
   },
   switchContent(e) {
+    let times = e.currentTarget.dataset.times;
+    let history = wx.getStorageSync('history') || [];
+    let url = '../content/content?img=' + this.data.msg[e.currentTarget.dataset.index].img + '&n=' + this.data.n + '&title=' + this.data.msg[e.currentTarget.dataset.index].title + '&time=' + this.data.msg[e.currentTarget.dataset.index].ct;
+    console.log(history);
+    history = history.filter((item) => {
+      return item.ct !== times;
+    })
+    history.unshift({
+      text: '',
+      n: this.data.n,
+      ct: times,
+      title: this.data.msg[e.currentTarget.dataset.index].title,
+      img: this.data.msg[e.currentTarget.dataset.index].img,
+      index: e.currentTarget.dataset.index,
+      url: url
+    });
+
+    wx.setStorageSync('history', history);
     wx.navigateTo({
-      url: '../content/content?img=' + this.data.msg[e.currentTarget.dataset.index].img + '&n=' + this.data.n + '&title=' + this.data.msg[e.currentTarget.dataset.index].title + '&time=' + this.data.msg[e.currentTarget.dataset.index].ct
+      url: url
     })
   },
   mine() {

@@ -1,3 +1,3 @@
 <!--pages/pic/pic.wxml-->
 <import src="../common/template/list.wxml"/>
-<template is="list" data="{{msg, load, userImage, nickName, moreLoad}}" />  
+<template is="list" data="{{msg, load, userImage, nickName, moreLoad, hisOff}}" />  

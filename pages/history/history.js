@@ -5,14 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    msg: [],
+    load: true,
+    moreLoad: false,
+    n: 0,
+    userImage: '',
+    nickName: '未知'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -26,7 +31,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(wx.getStorageSync('history'))
+    this.setData({
+      msg: wx.getStorageSync('history')
+    });
+    console.log(this.data.msg)
   },
 
   /**
@@ -62,5 +70,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  switchContent(e){
+    wx.navigateTo({
+      url: this.data.msg[e.currentTarget.dataset.index].url
+    })
   }
 })
